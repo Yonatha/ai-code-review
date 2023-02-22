@@ -1,0 +1,7 @@
+{
+  "reviewCodeMessage": "Improve this code and send your explanations as a comment before your suggestion",
+  "review_code_wait_message": "Please wait while the code is being reviewed..",
+  "error_secrekey_notfound": "The Secret Key field has not been set on the AI Code Review settings.",
+  "error_token_invalid_value": "Tokens value is not valid.",
+  "error_temperature_invalid_value": "Temperature value is not valid, select between 0.1 and 1.0"
+}

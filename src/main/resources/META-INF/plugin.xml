@@ -1,0 +1,68 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>com.yth.ai.codereview</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>AI Code Review</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor email="yonathalmeida@gmail.com" url="https://www.linkedin.com/in/yonatha/">Yonatha Almeida</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description><![CDATA[
+Improve code quality through code reviews utilizing artificial intelligence such as ChatGPT, Google Bard and other emerging AI technologies in the market. These tools can help in identifying potential issues, improving code readability, and enhancing overall software functionality. By utilizing these AI capabilities, developers can streamline their code review processes and ensure their code is of the highest quality.
+<br><br>
+<b>Features:</b>
+<ul>
+    <li>Support to code review any programming language</li>
+    <li>Parameterize the accuracy of code suggestions</li>
+    <li>Optimize time based on your needs</li>
+    <li>Language preference for AI messages (English, Spanish and Portuguese)</li>
+    <li>Compatible with all Jetbrains family products.</li>
+</ul>
+<br>
+<b>Coming soon:</b>
+<ul>
+    <li>Google Bard Support</li>
+    <li>Connection test in plugin configuration screen</li>
+    <li>Validation of configuration screen fields</li>
+</ul>
+  ]]></description>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+
+        <applicationConfigurable displayName="AI Code Review"
+                                 groupId="tools"
+                                 instance="com.yth.ai.codereview.configuration.CodeReviewSettings"/>
+
+        <notificationGroup id="notification.codereview"
+                           displayType="BALLOON"
+                           key="notification.codereview"/>
+    </extensions>
+
+    <actions>
+        <action
+                id="com.yth.ai.codereview.CodeMenu"
+                class="com.yth.ai.codereview.actions.CodeReviewAction"
+                text="AI Code Review "
+                description="Realize o code review do código selecionado">
+            <add-to-group group-id="CodeMenu" anchor="first"/>
+        </action>
+
+        <action text="AI Code Review"
+                class="com.yth.ai.codereview.actions.CodeReviewAction"
+                id="com.yth.ai.codereview.popupcontextmenu">
+            <add-to-group group-id="EditorPopupMenu3"/>
+        </action>
+    </actions>
+</idea-plugin>
