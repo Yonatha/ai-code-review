@@ -1,7 +1,7 @@
 {
   "reviewCodeMessage": "Mejora este código y envía tus explicaciones como comentario antes de tu sugerencia",
   "review_code_wait_message": "Por favor, espera mientras el código está siendo revisado...",
-  "error_secrekey_notfound": "El campo Clave secreta no se ha configurado en la configuración de AI Code Review.",
+  "error_secrekey_notfound": "El campo Clave secreta no se ha configurado.",
   "error_token_invalid_value": "El valor de Tokens no es válido.",
   "error_temperature_invalid_value": "El valor de Temperatura no es válido, seleccione entre 0,1 y 1,0."
 }
