@@ -44,7 +44,7 @@ Learn from AI suggestions
 <ul>
     <li>1. Access the main menu <b>File</b> -> <b>Settings</b> or press <b>Ctrl+Alt+S</b></li>
     <li>2. Go to <b>Tools</b> -> <b>AI Code Review</b></li>
-    <li>3. Insert your OpenAI API Key into the <b>Secret Key</b> field (generate your key here <a href="https://beta.openai.com/account/api-keys">https://beta.openai.com/account/api-keys</a></li> 
+    <li>3. Insert your OpenAI API Key into the <b>Secret Key</b> field (generate your key here <a href="https://platform.openai.com/account/api-keys">https://platform.openai.com/account/api-keys</a></li> 
     <li>4. Select the code suggestion language in the <b>AI Interaction Language</b> field</li>
     <li>5. Click <b>Ok</b> </li>
     <li>6. Great! Open a file containing the code you want to review</li>

@@ -11,6 +11,12 @@ import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 
 @State(
         name = "CodeReviewSettings",
@@ -35,6 +41,7 @@ public class CodeReviewSettings implements Configurable {
     private JTextField temperature;
     private JComboBox modelField;
     private JRadioButton aiEngineChatGpt;
+    private JLabel linkGetOpenAISecretKey;
 
     @Nls(capitalization = Nls.Capitalization.Title)
     @Override
@@ -45,6 +52,22 @@ public class CodeReviewSettings implements Configurable {
     @Nullable
     @Override
     public JComponent createComponent() {
+        linkGetOpenAISecretKey.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                if (e.getClickCount() == 1) {
+                    try {
+                        Desktop.getDesktop().browse(new URI("https://platform.openai.com/account/api-keys"));
+                    } catch (IOException | URISyntaxException ex) {
+                        try {
+                            throw new ConfigurationException("Could not open link, please access https://platform.openai.com/account/api-keys");
+                        } catch (ConfigurationException exc) {
+                            throw new RuntimeException(exc);
+                        }
+                    }
+                }
+            }
+        });
         return panel;
     }
 
