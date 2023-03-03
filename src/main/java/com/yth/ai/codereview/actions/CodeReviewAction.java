@@ -39,9 +39,9 @@ public class CodeReviewAction extends AnAction {
 
         PropertiesComponent propertiesComponent = PropertiesComponent.getInstance();
         String secretKey = propertiesComponent.getValue(PluginPropertiesEnum.SECRET_KEY_PROPERTY.getPropertyName());
-        String model = Objects.requireNonNull(propertiesComponent.getValue(PluginPropertiesEnum.MODEL_PROPERTY.getPropertyName())).toLowerCase();
-        double temperature = Double.parseDouble(propertiesComponent.getValue(PluginPropertiesEnum.TEMPERATURE_PROPERTY.getPropertyName()));
-        int maxTokens = Integer.parseInt(propertiesComponent.getValue(PluginPropertiesEnum.TOKENS_PROPERTY.getPropertyName()));
+        String model = propertiesComponent.getValue(PluginPropertiesEnum.MODEL_PROPERTY.getPropertyName());
+        String temperature = propertiesComponent.getValue(PluginPropertiesEnum.TEMPERATURE_PROPERTY.getPropertyName());
+        String maxTokens = propertiesComponent.getValue(PluginPropertiesEnum.TOKENS_PROPERTY.getPropertyName());
 
         if (secretKey == null || secretKey.isEmpty()) {
             Notification notification = new Notification(
@@ -67,10 +67,10 @@ public class CodeReviewAction extends AnAction {
         );
 
         OpenAIRequest request = new OpenAIRequest(
-                model,
+                model.toLowerCase(),
                 prompt,
-                temperature,
-                maxTokens,
+                Double.parseDouble(temperature),
+                Integer.parseInt(maxTokens),
                 1,
                 0,
                 0
