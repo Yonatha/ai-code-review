@@ -57,8 +57,9 @@ public class CodeReviewSettings implements Configurable {
     public void apply() throws ConfigurationException {
         PropertiesComponent propertiesComponent = PropertiesComponent.getInstance();
         String secretKey = getSecretToken();
-        this.validateTokensField();
-        this.validateTemperatureField();
+
+        ValidateSettings.validateTemperatureInput(tokens);
+        ValidateSettings.validateTemperatureField(temperature);
 
         propertiesComponent.setValue(SECRET_KEY_PROPERTY, secretKey);
         propertiesComponent.setValue(MODEL_PROPERTY, (String) modelField.getSelectedItem());
@@ -92,27 +93,6 @@ public class CodeReviewSettings implements Configurable {
                     .replace("Bearer ", "");
         }
         return "";
-    }
-
-    public boolean validateTokensField() {
-        String temperatureText = this.tokens.getText().trim();
-        String errorMessage = Message.getMessage("error_token_invalid_value");
-        if (temperatureText.isEmpty()) {
-            Messages.showMessageDialog(errorMessage, "Error", Messages.getWarningIcon());
-            return false;
-        }
-
-        try {
-            double number = Integer.parseInt(temperatureText);
-            if (number > 2048 || number < 0) {
-                Messages.showMessageDialog(errorMessage, "Error", Messages.getWarningIcon());
-                return false;
-            }
-        } catch (NumberFormatException e) {
-            Messages.showMessageDialog(errorMessage, "Error", Messages.getWarningIcon());
-            return false;
-        }
-        return true;
     }
 
     public boolean validateTemperatureField() {
