@@ -3,5 +3,8 @@
   "review_code_wait_message": "Aguarde enquanto o código esta sendo revisado....",
   "error_secrekey_notfound": "O campo Chave Secreta não foi configurado.",
   "error_token_invalid_value": "O valor do Token não é válido.",
-  "error_temperature_invalid_value": "O valor da Temperatura não é válido, selecione entre 0,1 e 1,0."
+  "error_temperature_invalid_value": "O valor da Temperatura não é válido, selecione entre 0,1 e 1,0.",
+  "success_test_connection": "Parabéns! Você esta conectado com o ChatGPT",
+  "error_test_connection": "Chave secreta ou configurações inapropriadas para o seu plano.",
+  "success_testing": "Testando suas configurações, por favor aguarde..."
 }

@@ -1,12 +1,19 @@
 package com.yth.ai.codereview.configuration;
 
 import com.intellij.ide.util.PropertiesComponent;
+import com.intellij.notification.Notification;
+import com.intellij.notification.NotificationAction;
+import com.intellij.notification.NotificationType;
+import com.intellij.notification.Notifications;
+import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
+import com.intellij.openapi.options.ShowSettingsUtil;
 import com.intellij.openapi.ui.Messages;
+import com.yth.ai.codereview.client.OpenAIClient;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.Nullable;
 
@@ -42,6 +49,7 @@ public class CodeReviewSettings implements Configurable {
     private JComboBox modelField;
     private JRadioButton aiEngineChatGpt;
     private JLabel linkGetOpenAISecretKey;
+    private JButton testConnectionButton;
 
     @Nls(capitalization = Nls.Capitalization.Title)
     @Override
@@ -64,6 +72,34 @@ public class CodeReviewSettings implements Configurable {
                         } catch (ConfigurationException exc) {
                             throw new RuntimeException(exc);
                         }
+                    }
+                }
+            }
+        });
+
+        testConnectionButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                if (e.getClickCount() == 1) {
+                    try {
+                        apply();
+                        if (OpenAIClient.testConnection()) {
+                            Notification notification = new Notification(
+                                    "notification.codereview",
+                                    "AI Code Review",
+                                    Message.getMessage("success_test_connection"),
+                                    NotificationType.INFORMATION);
+                            Notifications.Bus.notify(notification);
+                        } else {
+                            Notification notification = new Notification(
+                                    "notification.codereview",
+                                    "AI Code Review",
+                                    Message.getMessage("error_test_connection"),
+                                    NotificationType.ERROR);
+                            Notifications.Bus.notify(notification);
+                        }
+                    } catch (ConfigurationException ex) {
+                        throw new RuntimeException(ex);
                     }
                 }
             }
