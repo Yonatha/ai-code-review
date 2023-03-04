@@ -1,17 +1,29 @@
 package com.yth.ai.codereview.configuration;
 
 import com.intellij.ide.util.PropertiesComponent;
+import com.intellij.notification.Notification;
+import com.intellij.notification.NotificationAction;
+import com.intellij.notification.NotificationType;
+import com.intellij.notification.Notifications;
+import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
+import com.intellij.openapi.options.ShowSettingsUtil;
 import com.intellij.openapi.ui.Messages;
-import com.yth.ai.codereview.PluginNotifier;
+import com.yth.ai.codereview.client.OpenAIClient;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 
 @State(
         name = "CodeReviewSettings",
@@ -36,6 +48,8 @@ public class CodeReviewSettings implements Configurable {
     private JTextField temperature;
     private JComboBox modelField;
     private JRadioButton aiEngineChatGpt;
+    private JLabel linkGetOpenAISecretKey;
+    private JButton testConnectionButton;
 
     @Nls(capitalization = Nls.Capitalization.Title)
     @Override
@@ -46,6 +60,52 @@ public class CodeReviewSettings implements Configurable {
     @Nullable
     @Override
     public JComponent createComponent() {
+        linkGetOpenAISecretKey.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                if (e.getClickCount() == 1) {
+                    try {
+                        Desktop.getDesktop().browse(new URI("https://platform.openai.com/account/api-keys"));
+                    } catch (IOException | URISyntaxException ex) {
+                        try {
+                            throw new ConfigurationException("Could not open link, please access https://platform.openai.com/account/api-keys");
+                        } catch (ConfigurationException exc) {
+                            throw new RuntimeException(exc);
+                        }
+                    }
+                }
+            }
+        });
+
+        testConnectionButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                if (e.getClickCount() == 1) {
+                    try {
+                        apply();
+
+                        boolean isConnected = OpenAIClient.testConnection();
+                        Notification notification;
+                        if (isConnected) {
+                            notification = new Notification(
+                                    "notification.codereview",
+                                    "AI Code Review",
+                                    Message.getMessage("success_test_connection"),
+                                    NotificationType.INFORMATION);
+                        } else {
+                            notification = new Notification(
+                                    "notification.codereview",
+                                    "AI Code Review",
+                                    Message.getMessage("error_test_connection"),
+                                    NotificationType.ERROR);
+                        }
+                        Notifications.Bus.notify(notification);
+                    } catch (ConfigurationException ex) {
+                        throw new RuntimeException(ex);
+                    }
+                }
+            }
+        });
         return panel;
     }
 
@@ -58,8 +118,9 @@ public class CodeReviewSettings implements Configurable {
     public void apply() throws ConfigurationException {
         PropertiesComponent propertiesComponent = PropertiesComponent.getInstance();
         String secretKey = getSecretToken();
-        this.validateTokensField();
-        this.validateTemperatureField();
+
+        ValidateSettings.validateTemperatureInput(tokens);
+        ValidateSettings.validateTemperatureField(temperature);
 
         propertiesComponent.setValue(SECRET_KEY_PROPERTY, secretKey);
         propertiesComponent.setValue(MODEL_PROPERTY, (String) modelField.getSelectedItem());
@@ -93,27 +154,6 @@ public class CodeReviewSettings implements Configurable {
                     .replace("Bearer ", "");
         }
         return "";
-    }
-
-    public boolean validateTokensField() {
-        String temperatureText = this.tokens.getText().trim();
-        String errorMessage = Message.getMessage("error_token_invalid_value");
-        if (temperatureText.isEmpty()) {
-            Messages.showMessageDialog(errorMessage, "Error", Messages.getWarningIcon());
-            return false;
-        }
-
-        try {
-            double number = Integer.parseInt(temperatureText);
-            if (number > 2048 || number < 0) {
-                Messages.showMessageDialog(errorMessage, "Error", Messages.getWarningIcon());
-                return false;
-            }
-        } catch (NumberFormatException e) {
-            Messages.showMessageDialog(errorMessage, "Error", Messages.getWarningIcon());
-            return false;
-        }
-        return true;
     }
 
     public boolean validateTemperatureField() {

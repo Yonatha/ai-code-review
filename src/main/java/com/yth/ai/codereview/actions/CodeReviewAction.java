@@ -3,13 +3,15 @@ package com.yth.ai.codereview.actions;
 import com.intellij.diff.actions.CompareClipboardWithSelectionAction;
 import com.intellij.ide.DataManager;
 import com.intellij.ide.util.PropertiesComponent;
+import com.intellij.notification.Notification;
+import com.intellij.notification.NotificationAction;
+import com.intellij.notification.NotificationType;
+import com.intellij.notification.Notifications;
 import com.intellij.openapi.actionSystem.*;
-import com.intellij.openapi.components.ServiceManager;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.editor.SelectionModel;
 import com.intellij.openapi.ide.CopyPasteManager;
 import com.intellij.openapi.options.ShowSettingsUtil;
-import com.yth.ai.codereview.PluginNotifier;
 import com.yth.ai.codereview.client.OpenAIClient;
 import com.yth.ai.codereview.client.OpenAIRequest;
 import com.yth.ai.codereview.client.OpenAIResponse;
@@ -37,12 +39,25 @@ public class CodeReviewAction extends AnAction {
 
         PropertiesComponent propertiesComponent = PropertiesComponent.getInstance();
         String secretKey = propertiesComponent.getValue(PluginPropertiesEnum.SECRET_KEY_PROPERTY.getPropertyName());
-        String model = Objects.requireNonNull(propertiesComponent.getValue(PluginPropertiesEnum.MODEL_PROPERTY.getPropertyName())).toLowerCase();
-        double temperature = Double.parseDouble(propertiesComponent.getValue(PluginPropertiesEnum.TEMPERATURE_PROPERTY.getPropertyName()));
-        int maxTokens = Integer.parseInt(propertiesComponent.getValue(PluginPropertiesEnum.TOKENS_PROPERTY.getPropertyName()));
+        String model = propertiesComponent.getValue(PluginPropertiesEnum.MODEL_PROPERTY.getPropertyName());
+        String temperature = propertiesComponent.getValue(PluginPropertiesEnum.TEMPERATURE_PROPERTY.getPropertyName());
+        String maxTokens = propertiesComponent.getValue(PluginPropertiesEnum.TOKENS_PROPERTY.getPropertyName());
 
         if (secretKey == null || secretKey.isEmpty()) {
-            PluginNotifier.notifyError(editor.getProject(), Message.getMessage("error_secrekey_notfound"));
+            Notification notification = new Notification(
+                    "notification.codereview",
+                    "AI Code Review",
+                    Message.getMessage("error_secrekey_notfound"),
+                    NotificationType.INFORMATION);
+
+            notification.addAction(new NotificationAction("Configure") {
+                @Override
+                public void actionPerformed(AnActionEvent e, Notification notification) {
+                    ShowSettingsUtil.getInstance().showSettingsDialog(editor.getProject(), CodeReviewSettings.class);
+                }
+            });
+
+            Notifications.Bus.notify(notification, editor.getProject());
             return;
         }
 
@@ -52,10 +67,10 @@ public class CodeReviewAction extends AnAction {
         );
 
         OpenAIRequest request = new OpenAIRequest(
-                model,
+                model.toLowerCase(),
                 prompt,
-                temperature,
-                maxTokens,
+                Double.parseDouble(temperature),
+                Integer.parseInt(maxTokens),
                 1,
                 0,
                 0

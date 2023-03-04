@@ -44,6 +44,10 @@ Improve code quality through code reviews utilizing artificial intelligence such
         <applicationConfigurable displayName="AI Code Review"
                                  groupId="tools"
                                  instance="com.yth.ai.codereview.configuration.CodeReviewSettings"/>
+
+        <notificationGroup id="notification.codereview"
+                           displayType="BALLOON"
+                           key="notification.codereview"/>
     </extensions>
 
     <actions>
