@@ -83,21 +83,23 @@ public class CodeReviewSettings implements Configurable {
                 if (e.getClickCount() == 1) {
                     try {
                         apply();
-                        if (OpenAIClient.testConnection()) {
-                            Notification notification = new Notification(
+
+                        boolean isConnected = OpenAIClient.testConnection();
+                        Notification notification;
+                        if (isConnected) {
+                            notification = new Notification(
                                     "notification.codereview",
                                     "AI Code Review",
                                     Message.getMessage("success_test_connection"),
                                     NotificationType.INFORMATION);
-                            Notifications.Bus.notify(notification);
                         } else {
-                            Notification notification = new Notification(
+                            notification = new Notification(
                                     "notification.codereview",
                                     "AI Code Review",
                                     Message.getMessage("error_test_connection"),
                                     NotificationType.ERROR);
-                            Notifications.Bus.notify(notification);
                         }
+                        Notifications.Bus.notify(notification);
                     } catch (ConfigurationException ex) {
                         throw new RuntimeException(ex);
                     }

@@ -50,7 +50,7 @@ public class CodeReviewAction extends AnAction {
                     Message.getMessage("error_secrekey_notfound"),
                     NotificationType.INFORMATION);
 
-            notification.addAction(new NotificationAction("Configurações") {
+            notification.addAction(new NotificationAction("Configure") {
                 @Override
                 public void actionPerformed(AnActionEvent e, Notification notification) {
                     ShowSettingsUtil.getInstance().showSettingsDialog(editor.getProject(), CodeReviewSettings.class);
