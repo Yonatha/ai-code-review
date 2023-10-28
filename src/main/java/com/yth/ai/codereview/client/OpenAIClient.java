@@ -29,8 +29,11 @@ public class OpenAIClient {
             progress.setIndeterminate(true);
             progress.setText(Message.getMessage("review_code_wait_message"));
 
-            responce = client.request(secretKey, request);
-
+            try {
+                responce = client.request(secretKey, request);
+            } catch (Exception e){
+                e.printStackTrace();
+            }
             progress.stop();
         }, "AI Code Review", true, null);
 
@@ -65,8 +68,11 @@ public class OpenAIClient {
             progress.setIndeterminate(true);
             progress.setText(Message.getMessage("success_testing"));
 
-            responce = client.request(secretKey, request);
-
+            try {
+                responce = client.request(secretKey, request);
+            } catch (Exception e){
+                e.printStackTrace();
+            }
             progress.stop();
         }, "AI Code Review", true, null);
         return  responce.id != null;

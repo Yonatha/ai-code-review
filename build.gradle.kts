@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "com.yth.ai.codereview"
-version = "1.1.1"
+version = "1.2.1"
 
 repositories {
     mavenCentral()
@@ -33,8 +33,7 @@ tasks {
     }
 
     patchPluginXml {
-        sinceBuild.set("213")
-        untilBuild.set("231.*")
+        sinceBuild.set("0")
     }
 
     signPlugin {
