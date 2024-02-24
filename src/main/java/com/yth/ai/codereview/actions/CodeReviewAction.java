@@ -63,13 +63,10 @@ public class CodeReviewAction extends AnAction {
             return;
         }
 
-        String prompt = String.format("%s %s",
-                Message.getMessage("reviewCodeMessage"),
-                selectedText
-        );
-
         List<OpenAIRequest.Message> messages = new ArrayList<>();
-        messages.add(new OpenAIRequest.Message("user", prompt));
+        messages.add(new OpenAIRequest.Message("system", Message.getMessage("reviewCodeMessage")));
+        messages.add(new OpenAIRequest.Message("user", selectedText));
+//        messages.add(new OpenAIRequest.Message("assistant", Message.getMessage("role.assistant.codereviewresponse")));
         OpenAIRequest request = new OpenAIRequest(
                 model.toLowerCase(),
                 messages,

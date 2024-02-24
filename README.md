@@ -56,7 +56,7 @@ Learn from AI suggestions
 
 ## Release notes
 release/1.3.2
-- Atualização do OpenAIClient para integrar a versão do chat da Api do OpenAI
+- Atualização do OpenAIClient para integrar a versão para uso de Chat Completions da Api do OpenAI
 - Adição dos modelos gpt-3.5-turbo, gpt-4, gpt-4-turbo-preview, dall-e-3, davinci-002
 
 ## Screanshot image examples 

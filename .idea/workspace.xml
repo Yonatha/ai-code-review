@@ -4,19 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f6599c9-82b7-4da3-9e57-ebc8a347adfb" name="Changes" comment="Validação dos campos na configuração do plugin">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="4f6599c9-82b7-4da3-9e57-ebc8a347adfb" name="Changes" comment="Atualização do OpenAIClient para integrar a versão do chat da Api do OpenAI">
+      <change afterPath="$PROJECT_DIR$/screenshot/analyzing.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/context-menu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/main-menu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/screanshot4-light.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/screanshot6-light.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/select-code.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/test-connection.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/actions/CodeReviewAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/actions/CodeReviewAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/IOpenAIClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/IOpenAIClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/OpenAIClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/OpenAIClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/OpenAIRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/OpenAIRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/OpenAIResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/OpenAIResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/configuration/CodeReviewSettings.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/configuration/CodeReviewSettings.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/messages/messages_en_US.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/messages/messages_en_US.json" afterDir="false" />
     </list>
     <list id="7cc25733-2db3-4468-8c3f-157d16653f86" name="ANTEÇÃO" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -70,6 +69,20 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Yonatha"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="be6a11d4-47e9-44a8-aeba-723378e2e587" />
+        <option name="url" value="git@github.com:Yonatha/ai-code-review.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -436,7 +449,15 @@
       <option name="project" value="LOCAL" />
       <updated>1677031105215</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Atualização do OpenAIClient para integrar a versão do chat da Api do OpenAI">
+      <option name="closed" value="true" />
+      <created>1708786701629</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1708786701629</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -467,7 +488,8 @@
     <MESSAGE value="Atualização da descrição do plugin.xml" />
     <MESSAGE value="Devide and Conquer no CodeReviewAction" />
     <MESSAGE value="Validação dos campos na configuração do plugin" />
-    <option name="LAST_COMMIT_MESSAGE" value="Validação dos campos na configuração do plugin" />
+    <MESSAGE value="Atualização do OpenAIClient para integrar a versão do chat da Api do OpenAI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Atualização do OpenAIClient para integrar a versão do chat da Api do OpenAI" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -480,17 +502,7 @@
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/OpenAIClient.java</url>
           <line>37</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/OpenAIClient.java</url>
-          <line>35</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/OpenAIClient.java</url>
-          <line>71</line>
-          <option name="timeStamp" value="8" />
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
