@@ -108,11 +108,11 @@
             </constraints>
             <properties>
               <model>
-                <item value="text-davinci-003"/>
-                <item value="code-davinci-002"/>
-                <item value="code-cushman-001"/>
-                <item value="text-babbage-001"/>
-                <item value="text-curie-001"/>
+                <item value="gpt-3.5-turbo"/>
+                <item value="gpt-4"/>
+                <item value="gpt-4-turbo-preview"/>
+                <item value="dall-e-3"/>
+                <item value="davinci-002"/>
               </model>
             </properties>
           </component>

@@ -6,6 +6,6 @@ import feign.RequestLine;
 
 public interface IOpenAIClient {
     @Headers({"Content-Type: application/json", "Authorization: Bearer {secretKey}"})
-    @RequestLine("POST /v1/completions")
+    @RequestLine("POST /v1/chat/completions")
     OpenAIResponse request(@Param("secretKey") String secretKey, OpenAIRequest requisicao);
 }

@@ -2,38 +2,37 @@ package com.yth.ai.codereview.client;
 
 import com.google.gson.annotations.SerializedName;
 
+import com.google.gson.annotations.SerializedName;
+
+import java.util.List;
+
 public class OpenAIRequest {
 
     @SerializedName("model")
-    private String modelo;
+    private String model;
 
-    @SerializedName("prompt")
-    private String prompt;
+    @SerializedName("messages")
+    private List<Message> messages;
 
     @SerializedName("temperature")
     private double temperature;
 
-    @SerializedName("max_tokens")
-    private int maxTokens;
-
-    @SerializedName("top_p")
-    private double topP;
-
-    @SerializedName("frequency_penalty")
-    private double frequencyPenalty;
-
-    @SerializedName("presence_penalty")
-    private double presencePenalty;
-
-    public OpenAIRequest(String modelo, String prompt, double temperature, int maxTokens, double topP,
-                         double frequencyPenalty, double presencePenalty) {
-        this.modelo = modelo;
-        this.prompt = prompt;
+    public OpenAIRequest(String model, List<Message> messages, double temperature) {
+        this.model = model;
+        this.messages = messages;
         this.temperature = temperature;
-        this.maxTokens = maxTokens;
-        this.topP = topP;
-        this.frequencyPenalty = frequencyPenalty;
-        this.presencePenalty = presencePenalty;
+    }
+
+    public static class Message {
+        @SerializedName("role")
+        private String role;
+
+        @SerializedName("content")
+        private String content;
+
+        public Message(String role, String content) {
+            this.role = role;
+            this.content = content;
+        }
     }
 }
-

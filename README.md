@@ -53,3 +53,30 @@ Learn from AI suggestions
     <li>9. Check the results and suggestions in the IDE's native clipboard window</li>
     <li>10. Enjoy!</li>
 </ul>
+
+## Release notes
+release/1.3.2
+- Atualização do OpenAIClient para integrar a versão do chat da Api do OpenAI
+- Adição dos modelos gpt-3.5-turbo, gpt-4, gpt-4-turbo-preview, dall-e-3, davinci-002
+
+## Screanshot image examples 
+```java
+public class Program {
+    public static void main(String[] args) {
+        Integer age = 25;
+        if (age >= 5 && age <= 7) {
+            return "Category A"
+        } else if (age >= 8 && age <= 10) {
+            return "Category  B";
+        } else if (age >= 11 && age <= 13) {
+            return "Category  C";
+        } else if (age >= 14 && age <= 17) {
+            return "Category D";
+        } else if (age >= 18) {
+            return "Category E";
+        } else {
+            return "Age not valid";
+        }
+    }
+}
+```
