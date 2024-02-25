@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f6599c9-82b7-4da3-9e57-ebc8a347adfb" name="Changes" comment="Atualização das imagens no tema light">
+    <list default="true" id="4f6599c9-82b7-4da3-9e57-ebc8a347adfb" name="Changes" comment="feature/gemini retorno da sugestão">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/GoogleAI/GeminiService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/OpenAI/ChatGPTService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/actions/CodeReviewAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/actions/CodeReviewAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/GoogleAI/Candidate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/GoogleAI/Candidate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/GoogleAI/GeminiAIResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/GoogleAI/GeminiAIResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/GoogleAI/GeminiAIClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/GoogleAI/GeminiAIClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/configuration/CodeReviewSettings.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/configuration/CodeReviewSettings.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/configuration/CodeReviewSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/configuration/CodeReviewSettings.java" afterDir="false" />
     </list>
     <list id="7cc25733-2db3-4468-8c3f-157d16653f86" name="ANTEÇÃO" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -101,15 +105,15 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Gradle.Run Plugin.executor": "Debug",
+    "Gradle.Run Plugin.executor": "Run",
     "Gradle.Upgrade Gradle wrapper.executor": "Run",
     "Gradle.ai-code-review [buildPlugin].executor": "Run",
     "Gradle.ai-code-review [setupDependencies].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "false",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "true",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "true",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "false",
     "WebServerToolWindowFactoryState": "false",
     "android.gradle.sync.needed": "true",
     "git-widget-placeholder": "feature/gemini",
@@ -462,7 +466,23 @@
       <option name="project" value="LOCAL" />
       <updated>1708789456452</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="feature/gemini retorno da sugestão">
+      <option name="closed" value="true" />
+      <created>1708863376496</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1708863376496</updated>
+    </task>
+    <task id="LOCAL-00029" summary="feature/gemini retorno da sugestão">
+      <option name="closed" value="true" />
+      <created>1708863560530</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1708863560530</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -495,30 +515,16 @@
     <MESSAGE value="Validação dos campos na configuração do plugin" />
     <MESSAGE value="Atualização do OpenAIClient para integrar a versão do chat da Api do OpenAI" />
     <MESSAGE value="Atualização das imagens no tema light" />
-    <option name="LAST_COMMIT_MESSAGE" value="Atualização das imagens no tema light" />
+    <MESSAGE value="feature/gemini retorno da sugestão" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature/gemini retorno da sugestão" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/GoogleAI/GeminiAIClient.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/actions/CodeReviewAction.java</url>
-          <line>98</line>
-          <option name="timeStamp" value="43" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/actions/CodeReviewAction.java</url>
-          <line>91</line>
-          <option name="timeStamp" value="44" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/actions/CodeReviewAction.java</url>
-          <line>179</line>
-          <option name="timeStamp" value="45" />
+          <line>33</line>
+          <option name="timeStamp" value="41" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

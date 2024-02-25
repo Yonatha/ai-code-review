@@ -16,6 +16,8 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
@@ -31,24 +33,67 @@ import java.net.URISyntaxException;
 public class CodeReviewSettings implements Configurable {
 
     private Editor editor;
-
     private static final String ENGINE = "com.yth.ai.codereview.engine";
     private static final String SECRET_KEY_PROPERTY = "com.yth.ai.codereview.secretKey";
     private static final String MODEL_PROPERTY = "com.yth.ai.codereview.model";
     private static final String LANGUAGE_PROPERTY = "com.yth.ai.codereview.language";
     private static final String TOKENS_PROPERTY = "com.yth.ai.codereview.tokens";
     private static final String TEMPERATURE_PROPERTY = "com.yth.ai.codereview.temperature";
-
     private JPanel panel;
     private JTextField secretKeyField;
     private JComboBox languageCombo;
     private JTextField tokens;
     private JTextField temperature;
     private JComboBox modelField;
-    private JRadioButton aiEngineChatGpt;
-    private JRadioButton aiEngineGemini;
-    private JLabel linkGetOpenAISecretKey;
+    private JRadioButton chatpGptEngine;
+    private JRadioButton geminiEngine;
+    private JLabel lblGetOpenAISecretKey;
+    private JLabel lblGetGeminiKey;
     private JButton testConnectionButton;
+    private JLabel lblModel;
+    private JLabel lblToken;
+    private JLabel lblTemperature;
+
+    public CodeReviewSettings() {
+
+        lblGetGeminiKey.setVisible(false);
+        chatpGptEngine.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (chatpGptEngine.isSelected()) {
+                    geminiEngine.setSelected(false);
+                    lblGetGeminiKey.setVisible(false);
+                    lblGetOpenAISecretKey.setVisible(true);
+                    toggleFields(true);
+                }
+            }
+        });
+
+        geminiEngine.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (geminiEngine.isSelected()) {
+                    chatpGptEngine.setSelected(false);
+                    lblGetOpenAISecretKey.setVisible(false);
+                    lblGetGeminiKey.setVisible(true);
+                    toggleFields(false);
+                }
+            }
+        });
+    }
+
+    private void ocultarLblGeminiKey() {
+        lblGetGeminiKey.setVisible(false);
+    }
+
+    private void toggleFields(boolean visible) {
+        lblModel.setVisible(visible);
+        modelField.setVisible(visible);
+        lblToken.setVisible(visible);
+        tokens.setVisible(visible);
+        lblTemperature.setVisible(visible);
+        temperature.setVisible(visible);
+    }
 
     @Nls(capitalization = Nls.Capitalization.Title)
     @Override
@@ -59,7 +104,7 @@ public class CodeReviewSettings implements Configurable {
     @Nullable
     @Override
     public JComponent createComponent() {
-        linkGetOpenAISecretKey.addMouseListener(new MouseAdapter() {
+        lblGetOpenAISecretKey.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 if (e.getClickCount() == 1) {
@@ -121,9 +166,9 @@ public class CodeReviewSettings implements Configurable {
         ValidateSettings.validateTemperatureInput(tokens);
         ValidateSettings.validateTemperatureField(temperature);
 
-        String engineSelected = aiEngineChatGpt.getText();
-        if (aiEngineGemini.isSelected())
-            engineSelected = aiEngineGemini.getText();
+        String engineSelected = chatpGptEngine.getText();
+        if (geminiEngine.isSelected())
+            engineSelected = geminiEngine.getText();
 
         propertiesComponent.setValue(ENGINE, engineSelected);
         propertiesComponent.setValue(SECRET_KEY_PROPERTY, secretKey);
