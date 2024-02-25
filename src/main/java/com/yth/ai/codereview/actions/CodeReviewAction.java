@@ -139,8 +139,7 @@ public class CodeReviewAction extends AnAction {
         Content content = new Content();
         Part part = new Part();
 
-        // String prompt = Message.getMessage("reviewCodeMessage") + ": " + selectedText;
-        String prompt = "Qual o produto dessa soma 2+2?";
+         String prompt = Message.getMessage("reviewCodeMessage") + ": " + selectedText;
         part.setText(prompt);
         content.getParts().add(part);
 
