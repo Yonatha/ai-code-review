@@ -197,7 +197,7 @@
         </constraints>
         <properties>
           <name value=""/>
-          <text value="&lt;html&gt;&lt;a href=&quot;https://aistudio.google.com/app/apikey&quot;&gt;Get Gemini Key&lt;/a&gt;&lt;/html&gt;"/>
+          <text value="&lt;html&gt;&lt;a href=&quot;https://aistudio.google.com/app/apike\&quot;&gt;Get Gemini Key&lt;/a&gt;&lt;/html&gt;"/>
           <visible value="true"/>
         </properties>
       </component>

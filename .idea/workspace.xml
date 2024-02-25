@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f6599c9-82b7-4da3-9e57-ebc8a347adfb" name="Changes" comment="feature/gemini retorno da sugestão">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/GoogleAI/GeminiService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/OpenAI/ChatGPTService.java" afterDir="false" />
+    <list default="true" id="4f6599c9-82b7-4da3-9e57-ebc8a347adfb" name="Changes" comment="feature/gemini ajuste de campos na cofniguração">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/actions/CodeReviewAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/actions/CodeReviewAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/GoogleAI/GeminiAIClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/GoogleAI/GeminiAIClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/configuration/CodeReviewSettings.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/configuration/CodeReviewSettings.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/configuration/CodeReviewSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/configuration/CodeReviewSettings.java" afterDir="false" />
     </list>
@@ -113,7 +108,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "true",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "false",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "true",
     "WebServerToolWindowFactoryState": "false",
     "android.gradle.sync.needed": "true",
     "git-widget-placeholder": "feature/gemini",
@@ -482,7 +477,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708863560530</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="feature/gemini ajuste de campos na cofniguração">
+      <option name="closed" value="true" />
+      <created>1708892859399</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1708892859399</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -516,7 +519,8 @@
     <MESSAGE value="Atualização do OpenAIClient para integrar a versão do chat da Api do OpenAI" />
     <MESSAGE value="Atualização das imagens no tema light" />
     <MESSAGE value="feature/gemini retorno da sugestão" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature/gemini retorno da sugestão" />
+    <MESSAGE value="feature/gemini ajuste de campos na cofniguração" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature/gemini ajuste de campos na cofniguração" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

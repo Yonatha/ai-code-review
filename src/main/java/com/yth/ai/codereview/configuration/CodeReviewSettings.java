@@ -121,6 +121,23 @@ public class CodeReviewSettings implements Configurable {
             }
         });
 
+        lblGetGeminiKey.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                if (e.getClickCount() == 1) {
+                    try {
+                        Desktop.getDesktop().browse(new URI("https://aistudio.google.com/app/apike"));
+                    } catch (IOException | URISyntaxException ex) {
+                        try {
+                            throw new ConfigurationException("Could not open link, please access https://aistudio.google.com/app/apike");
+                        } catch (ConfigurationException exc) {
+                            throw new RuntimeException(exc);
+                        }
+                    }
+                }
+            }
+        });
+
         testConnectionButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
