@@ -50,7 +50,6 @@ public class GeminiService {
         request.getSafetySettings().add(explicitSetting);
         request.getSafetySettings().add(dangerousContentSetting);
         GeminiAIResponse response = client.request(request);
-        System.out.println(response);
 
         if (!response.getCandidates().isEmpty())
             return this.mountAiSuggestions(response.getCandidates());

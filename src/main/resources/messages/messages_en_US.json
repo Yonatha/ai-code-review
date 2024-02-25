@@ -4,7 +4,7 @@
   "error_secrekey_notfound": "The Secret Key field has not been set.",
   "error_token_invalid_value": "Tokens field value is not valid.",
   "error_temperature_invalid_value": "Temperature field value is not valid, select between 0.1 and 1.0",
-  "success_test_connection": "Congratulation! You are connected with ChatGPT",
+  "success_test_connection": "Congratulation! You are connected with ",
   "error_test_connection": "Invalid Secret Key or inappropriate settings for your plan",
   "success_testing": "Testing your configuration, please wait..."
 }

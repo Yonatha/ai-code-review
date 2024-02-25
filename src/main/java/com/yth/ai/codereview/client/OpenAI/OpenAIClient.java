@@ -71,7 +71,7 @@ public class OpenAIClient {
             try {
                 responce = client.request(secretKey, request);
             } catch (Exception e){
-                e.printStackTrace();
+                System.out.println(e.getMessage());
             }
             progress.stop();
         }, "AI Code Review", true, null);

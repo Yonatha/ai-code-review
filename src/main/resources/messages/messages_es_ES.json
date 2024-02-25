@@ -4,7 +4,7 @@
   "error_secrekey_notfound": "El campo Clave secreta no se ha configurado.",
   "error_token_invalid_value": "El valor de Tokens no es válido.",
   "error_temperature_invalid_value": "El valor de Temperatura no es válido, seleccione entre 0,1 y 1,0.",
-  "success_test_connection": "¡Felicitaciones! Estás conectado con ChatGPT",
+  "success_test_connection": "¡Felicitaciones! Estás conectado con ",
   "error_test_connection": "Clave secreta no válida o configuración inapropiada para su plan",
   "success_testing": "Probando su configuración, espere..."
 }

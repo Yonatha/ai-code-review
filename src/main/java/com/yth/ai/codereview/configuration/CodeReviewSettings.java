@@ -10,6 +10,7 @@ import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.ui.Messages;
+import com.yth.ai.codereview.client.GoogleAI.GeminiAIClient;
 import com.yth.ai.codereview.client.OpenAI.OpenAIClient;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.Nullable;
@@ -49,14 +50,18 @@ public class CodeReviewSettings implements Configurable {
     private JRadioButton geminiEngine;
     private JLabel lblGetOpenAISecretKey;
     private JLabel lblGetGeminiKey;
-    private JButton testConnectionButton;
+    private JButton btnTestConnection;
     private JLabel lblModel;
     private JLabel lblToken;
     private JLabel lblTemperature;
+    private JTextField txtGeminiModel;
+
+    private String engineSelected;
 
     public CodeReviewSettings() {
 
         lblGetGeminiKey.setVisible(false);
+        txtGeminiModel.setVisible(false);
         chatpGptEngine.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -87,7 +92,7 @@ public class CodeReviewSettings implements Configurable {
     }
 
     private void toggleFields(boolean visible) {
-        lblModel.setVisible(visible);
+        txtGeminiModel.setVisible(visible);
         modelField.setVisible(visible);
         lblToken.setVisible(visible);
         tokens.setVisible(visible);
@@ -138,20 +143,26 @@ public class CodeReviewSettings implements Configurable {
             }
         });
 
-        testConnectionButton.addMouseListener(new MouseAdapter() {
+        btnTestConnection.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 if (e.getClickCount() == 1) {
                     try {
                         apply();
 
-                        boolean isConnected = OpenAIClient.testConnection();
+                        boolean isConnected = false;
+                        if (chatpGptEngine.isSelected()) {
+                            isConnected = OpenAIClient.testConnection();
+                        } else if(geminiEngine.isSelected()) {
+                            isConnected = GeminiAIClient.testConnection();
+                        }
+
                         Notification notification;
                         if (isConnected) {
                             notification = new Notification(
                                     "notification.codereview",
                                     "AI Code Review",
-                                    Message.getMessage("success_test_connection"),
+                                    Message.getMessage("success_test_connection") + engineSelected,
                                     NotificationType.INFORMATION);
                         } else {
                             notification = new Notification(
@@ -183,9 +194,12 @@ public class CodeReviewSettings implements Configurable {
         ValidateSettings.validateTemperatureInput(tokens);
         ValidateSettings.validateTemperatureField(temperature);
 
-        String engineSelected = chatpGptEngine.getText();
+        engineSelected = chatpGptEngine.getText();
         if (geminiEngine.isSelected())
             engineSelected = geminiEngine.getText();
+
+        if (chatpGptEngine.isSelected())
+            engineSelected = chatpGptEngine.getText();
 
         propertiesComponent.setValue(ENGINE, engineSelected);
         propertiesComponent.setValue(SECRET_KEY_PROPERTY, secretKey);
