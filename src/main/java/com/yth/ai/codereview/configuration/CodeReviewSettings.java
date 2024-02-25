@@ -69,6 +69,7 @@ public class CodeReviewSettings implements Configurable {
                     geminiEngine.setSelected(false);
                     lblGetGeminiKey.setVisible(false);
                     lblGetOpenAISecretKey.setVisible(true);
+                    txtGeminiModel.setVisible(false);
                     toggleFields(true);
                 }
             }
@@ -81,6 +82,7 @@ public class CodeReviewSettings implements Configurable {
                     chatpGptEngine.setSelected(false);
                     lblGetOpenAISecretKey.setVisible(false);
                     lblGetGeminiKey.setVisible(true);
+                    txtGeminiModel.setVisible(true);
                     toggleFields(false);
                 }
             }
@@ -92,7 +94,6 @@ public class CodeReviewSettings implements Configurable {
     }
 
     private void toggleFields(boolean visible) {
-        txtGeminiModel.setVisible(visible);
         modelField.setVisible(visible);
         lblToken.setVisible(visible);
         tokens.setVisible(visible);

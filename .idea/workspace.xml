@@ -6,14 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4f6599c9-82b7-4da3-9e57-ebc8a347adfb" name="Changes" comment="feature/gemini ajustes na tela de configuração do plugin">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/GoogleAI/GeminiAIClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/GoogleAI/GeminiAIClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/GoogleAI/GeminiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/GoogleAI/GeminiService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/OpenAI/OpenAIClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/OpenAI/OpenAIClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/configuration/CodeReviewSettings.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/configuration/CodeReviewSettings.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/configuration/CodeReviewSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/configuration/CodeReviewSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/messages/messages_en_US.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/messages/messages_en_US.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/messages/messages_es_ES.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/messages/messages_es_ES.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/messages/messages_pt_BR.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/messages/messages_pt_BR.json" afterDir="false" />
     </list>
     <list id="7cc25733-2db3-4468-8c3f-157d16653f86" name="ANTEÇÃO" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -106,7 +100,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Gradle.Run Plugin.executor": "Debug",
+    "Gradle.Run Plugin.executor": "Run",
     "Gradle.Upgrade Gradle wrapper.executor": "Run",
     "Gradle.ai-code-review [buildPlugin].executor": "Run",
     "Gradle.ai-code-review [setupDependencies].executor": "Run",
@@ -114,7 +108,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "true",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "true",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "false",
     "WebServerToolWindowFactoryState": "false",
     "android.gradle.sync.needed": "true",
     "git-widget-placeholder": "feature/gemini",
@@ -499,7 +493,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708893939315</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="feature/gemini ajustes na tela de configuração do plugin">
+      <option name="closed" value="true" />
+      <created>1708896687372</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1708896687372</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -538,6 +540,15 @@
     <option name="LAST_COMMIT_MESSAGE" value="feature/gemini ajustes na tela de configuração do plugin" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/configuration/CodeReviewSettings.java</url>
+          <line>71</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="GradleRunConfiguration">
         <watch expression="chatpGptEngine.isSelected()" language="JAVA" />
