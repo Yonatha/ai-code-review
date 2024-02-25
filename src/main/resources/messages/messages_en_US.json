@@ -1,5 +1,5 @@
 {
-  "reviewCodeMessage": "As an expert in programming using SOLID principles, improve this code and send your explanations as a code comment like /* explanations */ before your suggestion. dont't use markdown on response",
+  "reviewCodeMessage": "As an expert in this programming language, improve this code and send your explanations as a code comment like /* explanations */ before your suggestion. DONT'T use any markdown syntax on response",
   "review_code_wait_message": "Please wait while the code is being reviewed..",
   "error_secrekey_notfound": "The Secret Key field has not been set.",
   "error_token_invalid_value": "Tokens field value is not valid.",
