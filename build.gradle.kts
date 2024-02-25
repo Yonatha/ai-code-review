@@ -10,10 +10,9 @@ repositories {
     mavenCentral()
 }
 dependencies {
-    implementation("io.github.openfeign:feign-core:12.1")
-    implementation("io.github.openfeign:feign-gson:12.1")
+    implementation("io.github.openfeign:feign-gson:13.2.1")
     implementation("com.google.code.gson:gson:2.10.1")
-
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.16.1")
 }
 
 // Configure Gradle IntelliJ Plugin

@@ -1,6 +1,7 @@
 package com.yth.ai.codereview.configuration;
 
 public enum PluginPropertiesEnum {
+    ENGINE("com.yth.ai.codereview.engine"),
     SECRET_KEY_PROPERTY("com.yth.ai.codereview.secretKey"),
     MODEL_PROPERTY("com.yth.ai.codereview.model"),
     LANGUAGE_PROPERTY("com.yth.ai.codereview.language"),

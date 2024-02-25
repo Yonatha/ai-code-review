@@ -4,18 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f6599c9-82b7-4da3-9e57-ebc8a347adfb" name="Changes" comment="Atualização do OpenAIClient para integrar a versão do chat da Api do OpenAI">
-      <change afterPath="$PROJECT_DIR$/screenshot/analyzing.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshot/context-menu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshot/main-menu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshot/screanshot4-light.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshot/screanshot6-light.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshot/select-code.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshot/test-connection.png" afterDir="false" />
+    <list default="true" id="4f6599c9-82b7-4da3-9e57-ebc8a347adfb" name="Changes" comment="Atualização das imagens no tema light">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/GoogleAI/Dto/Content.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/GoogleAI/Dto/GenerationConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/GoogleAI/Dto/Part.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/GoogleAI/Dto/SafetySetting.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/GoogleAI/GeminiAIClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/GoogleAI/GeminiAIRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/GoogleAI/GeminiAIResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/GoogleAI/IGeminiAIClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/actions/CodeReviewAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/actions/CodeReviewAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/messages/messages_en_US.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/messages/messages_en_US.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/IOpenAIClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/OpenAI/IOpenAIClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/OpenAIClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/OpenAI/OpenAIClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/OpenAIRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/OpenAI/OpenAIRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/OpenAIResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/OpenAI/OpenAIResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/configuration/CodeReviewSettings.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/configuration/CodeReviewSettings.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/configuration/CodeReviewSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/configuration/CodeReviewSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/configuration/PluginPropertiesEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/configuration/PluginPropertiesEnum.java" afterDir="false" />
     </list>
     <list id="7cc25733-2db3-4468-8c3f-157d16653f86" name="ANTEÇÃO" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -146,6 +154,10 @@
       <recent name="$PROJECT_DIR$/src/main/resources/META-INF/messages" />
       <recent name="$PROJECT_DIR$/src/main/resources/META-INF/language" />
       <recent name="$PROJECT_DIR$/src/main/java/yth/ai/codereview/configuration" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.yth.ai.codereview.client.GoogleAI" />
+      <recent name="com.yth.ai.codereview.client.Gemini" />
     </key>
   </component>
   <component name="RubyModuleManagerSettings">
@@ -457,7 +469,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708786701629</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Atualização das imagens no tema light">
+      <option name="closed" value="true" />
+      <created>1708789456452</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1708789456452</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -489,30 +509,32 @@
     <MESSAGE value="Devide and Conquer no CodeReviewAction" />
     <MESSAGE value="Validação dos campos na configuração do plugin" />
     <MESSAGE value="Atualização do OpenAIClient para integrar a versão do chat da Api do OpenAI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Atualização do OpenAIClient para integrar a versão do chat da Api do OpenAI" />
+    <MESSAGE value="Atualização das imagens no tema light" />
+    <option name="LAST_COMMIT_MESSAGE" value="Atualização das imagens no tema light" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/OpenAIClient.java</url>
-          <line>73</line>
-          <option name="timeStamp" value="5" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/GoogleAI/GeminiAIClient.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="39" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/OpenAIClient.java</url>
-          <line>37</line>
-          <option name="timeStamp" value="10" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/actions/CodeReviewAction.java</url>
+          <line>95</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/actions/CodeReviewAction.java</url>
+          <line>174</line>
+          <option name="timeStamp" value="41" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="GradleRunConfiguration">
-        <watch expression="propertiesComponent.getValue(PluginPropertiesEnum.TOKENS_PROPERTY.getPropertyName()" language="JAVA" />
-        <watch expression="propertiesComponent.getValue(PluginPropertiesEnum.TEMPERATURE_PROPERTY.getPropertyName())" language="JAVA" />
-        <watch expression="propertiesComponent.getValue(PluginPropertiesEnum.LANGUAGE_PROPERTY.getPropertyName())" language="JAVA" />
-        <watch expression="propertiesComponent.getValue(PluginPropertiesEnum.MODEL_PROPERTY.getPropertyName())" language="JAVA" />
-        <watch expression="propertiesComponent.getValue(PluginPropertiesEnum.SECRET_KEY_PROPERTY.getPropertyName())" language="JAVA" />
+        <watch expression="e.getMessage()" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>

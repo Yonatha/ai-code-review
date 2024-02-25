@@ -1,4 +1,4 @@
-package com.yth.ai.codereview.client;
+package com.yth.ai.codereview.client.OpenAI;
 
 import com.intellij.ide.util.PropertiesComponent;
 import com.intellij.openapi.options.ConfigurationException;

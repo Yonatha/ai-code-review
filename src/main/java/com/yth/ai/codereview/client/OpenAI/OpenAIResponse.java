@@ -1,4 +1,4 @@
-package com.yth.ai.codereview.client;
+package com.yth.ai.codereview.client.OpenAI;
 
 import com.google.gson.annotations.SerializedName;
 

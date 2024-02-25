@@ -2,18 +2,15 @@ package com.yth.ai.codereview.configuration;
 
 import com.intellij.ide.util.PropertiesComponent;
 import com.intellij.notification.Notification;
-import com.intellij.notification.NotificationAction;
 import com.intellij.notification.NotificationType;
 import com.intellij.notification.Notifications;
-import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
-import com.intellij.openapi.options.ShowSettingsUtil;
 import com.intellij.openapi.ui.Messages;
-import com.yth.ai.codereview.client.OpenAIClient;
+import com.yth.ai.codereview.client.OpenAI.OpenAIClient;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.Nullable;
 
@@ -35,6 +32,7 @@ public class CodeReviewSettings implements Configurable {
 
     private Editor editor;
 
+    private static final String ENGINE = "com.yth.ai.codereview.engine";
     private static final String SECRET_KEY_PROPERTY = "com.yth.ai.codereview.secretKey";
     private static final String MODEL_PROPERTY = "com.yth.ai.codereview.model";
     private static final String LANGUAGE_PROPERTY = "com.yth.ai.codereview.language";
@@ -48,6 +46,7 @@ public class CodeReviewSettings implements Configurable {
     private JTextField temperature;
     private JComboBox modelField;
     private JRadioButton aiEngineChatGpt;
+    private JRadioButton aiEngineGemini;
     private JLabel linkGetOpenAISecretKey;
     private JButton testConnectionButton;
 
@@ -122,6 +121,11 @@ public class CodeReviewSettings implements Configurable {
         ValidateSettings.validateTemperatureInput(tokens);
         ValidateSettings.validateTemperatureField(temperature);
 
+        String engineSelected = aiEngineChatGpt.getText();
+        if (aiEngineGemini.isSelected())
+            engineSelected = aiEngineGemini.getText();
+
+        propertiesComponent.setValue(ENGINE, engineSelected);
         propertiesComponent.setValue(SECRET_KEY_PROPERTY, secretKey);
         propertiesComponent.setValue(MODEL_PROPERTY, (String) modelField.getSelectedItem());
         propertiesComponent.setValue(LANGUAGE_PROPERTY, (String) languageCombo.getSelectedItem());
