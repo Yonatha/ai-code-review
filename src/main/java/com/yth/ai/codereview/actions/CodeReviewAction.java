@@ -12,6 +12,7 @@ import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.editor.SelectionModel;
 import com.intellij.openapi.ide.CopyPasteManager;
 import com.intellij.openapi.options.ShowSettingsUtil;
+import com.yth.ai.codereview.client.GoogleAI.Candidate;
 import com.yth.ai.codereview.client.GoogleAI.Dto.Content;
 import com.yth.ai.codereview.client.GoogleAI.Dto.SafetySetting;
 import com.yth.ai.codereview.client.GoogleAI.GeminiAIClient;
@@ -85,11 +86,13 @@ public class CodeReviewAction extends AnAction {
         return sb.toString();
     }
 
-    public String mountAiSuggestions(List<Content> response) {
+    public String mountAiSuggestions(List<Candidate> response) {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < response.size(); i++) {
-            for (int j = 0; j < response.get(i).getParts().size(); j++) {
-                String text = response.get(i).getParts().get(j).getText();
+            response.get(i).getContent();
+            Content content = response.get(i).getContent();
+            for (int j = 0; j < content.getParts().size(); j++) {
+                String text = content.getParts().get(j).getText();
                 sb.append(text);
             }
         }
@@ -173,9 +176,10 @@ public class CodeReviewAction extends AnAction {
         System.out.println(response);
 
         if (!response.getCandidates().isEmpty()) {
-            /* String suggestion = this.mountAiSuggestions(response);
+            String suggestion = this.mountAiSuggestions(response.getCandidates());
+            System.out.println(suggestion);
             CopyPasteManager.getInstance().setContents(new StringSelection(suggestion));
-            displayClipBoardAISugestion();*/
+            displayClipBoardAISugestion();
         }
     }
 }

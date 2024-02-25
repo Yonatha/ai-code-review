@@ -2,6 +2,8 @@ package com.yth.ai.codereview.client.GoogleAI;
 
 import java.util.List;
 
+import java.util.List;
+
 public class GeminiAIResponse {
 
     private List<Candidate> candidates;
@@ -12,20 +14,6 @@ public class GeminiAIResponse {
 
     public void setCandidates(List<Candidate> candidates) {
         this.candidates = candidates;
-    }
-
-}
-
-class Content {
-
-    private List<Part> parts;
-
-    public List<Part> getParts() {
-        return parts;
-    }
-
-    public void setParts(List<Part> parts) {
-        this.parts = parts;
     }
 
 }
