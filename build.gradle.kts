@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "com.yth.ai.codereview"
-version = "1.2.1"
+version = "1.3.2"
 
 repositories {
     mavenCentral()
@@ -18,7 +18,7 @@ dependencies {
 // Configure Gradle IntelliJ Plugin
 // Read more: https://plugins.jetbrains.com/docs/intellij/tools-gradle-intellij-plugin.html
 intellij {
-    version.set("2021.3")
+    version.set("2023.3")
     type.set("IC") // Target IDE Platform
 
     plugins.set(listOf(/* Plugin Dependencies */))

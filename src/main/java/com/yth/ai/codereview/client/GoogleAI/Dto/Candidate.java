@@ -1,4 +1,4 @@
-package com.yth.ai.codereview.client.GoogleAI;
+package com.yth.ai.codereview.client.GoogleAI.Dto;
 
 import com.yth.ai.codereview.client.GoogleAI.Dto.Content;
 

@@ -1,9 +1,7 @@
 package com.yth.ai.codereview.client.GoogleAI;
 
-import com.yth.ai.codereview.client.GoogleAI.Dto.Content;
-import com.yth.ai.codereview.client.GoogleAI.Dto.GenerationConfig;
+import com.yth.ai.codereview.client.GoogleAI.Dto.*;
 import com.yth.ai.codereview.client.GoogleAI.Dto.Part;
-import com.yth.ai.codereview.client.GoogleAI.Dto.SafetySetting;
 import com.yth.ai.codereview.configuration.Message;
 
 import java.util.List;

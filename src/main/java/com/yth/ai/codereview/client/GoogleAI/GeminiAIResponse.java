@@ -1,6 +1,6 @@
 package com.yth.ai.codereview.client.GoogleAI;
 
-import java.util.List;
+import com.yth.ai.codereview.client.GoogleAI.Dto.Candidate;
 
 import java.util.List;
 
