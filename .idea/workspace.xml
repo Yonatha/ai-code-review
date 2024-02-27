@@ -4,17 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f6599c9-82b7-4da3-9e57-ebc8a347adfb" name="Changes" comment="Validação dos campos na configuração do plugin">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2_21_23,_7_54_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2_21_23,_7_55_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2_21_23__7_54_PM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2_21_23__7_55_PM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="4f6599c9-82b7-4da3-9e57-ebc8a347adfb" name="Changes" comment="Atualização do OpenAIClient para integrar a versão do chat da Api do OpenAI">
+      <change afterPath="$PROJECT_DIR$/screenshot/analyzing.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/context-menu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/main-menu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/screanshot4-light.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/screanshot6-light.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/select-code.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot/test-connection.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/OpenAIClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/OpenAIClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/actions/CodeReviewAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/actions/CodeReviewAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/messages/messages_en_US.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/messages/messages_en_US.json" afterDir="false" />
     </list>
     <list id="7cc25733-2db3-4468-8c3f-157d16653f86" name="ANTEÇÃO" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,10 +64,25 @@
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$/.." value="master" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Yonatha"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="be6a11d4-47e9-44a8-aeba-723378e2e587" />
+        <option name="url" value="git@github.com:Yonatha/ai-code-review.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -92,6 +108,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Gradle.Run Plugin.executor": "Debug",
+    "Gradle.Upgrade Gradle wrapper.executor": "Run",
+    "Gradle.ai-code-review [buildPlugin].executor": "Run",
+    "Gradle.ai-code-review [setupDependencies].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -99,17 +119,18 @@
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "true",
     "WebServerToolWindowFactoryState": "false",
     "android.gradle.sync.needed": "true",
-    "git-widget-placeholder": "release/1.2.1",
+    "git-widget-placeholder": "release/1.3.2",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/projetos/pessoal/ai-code-review/build/distributions/AI Code Review-1.2.1.zip",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/projetos/pessoal/ai-code-review",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "ruby.rails.projectView.checked": "true",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -135,7 +156,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.ai-code-review [buildPlugin]">
+  <component name="RunManager" selected="Gradle.Run Plugin">
     <configuration name="C:/projetos/pessoal/ai-code-review/src [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -226,12 +247,19 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.ai-code-review [buildPlugin]" />
-        <item itemvalue="Gradle.C:/projetos/pessoal/ai-code-review/src [build]" />
         <item itemvalue="Gradle.demo [jar]" />
         <item itemvalue="Gradle.demo [build]" />
+        <item itemvalue="Gradle.ai-code-review [buildPlugin]" />
+        <item itemvalue="Gradle.C:/projetos/pessoal/ai-code-review/src [build]" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.1-openjdk-21.0.1-249ae16d76d6-a618e4d4" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -421,7 +449,15 @@
       <option name="project" value="LOCAL" />
       <updated>1677031105215</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Atualização do OpenAIClient para integrar a versão do chat da Api do OpenAI">
+      <option name="closed" value="true" />
+      <created>1708786701629</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1708786701629</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -452,7 +488,8 @@
     <MESSAGE value="Atualização da descrição do plugin.xml" />
     <MESSAGE value="Devide and Conquer no CodeReviewAction" />
     <MESSAGE value="Validação dos campos na configuração do plugin" />
-    <option name="LAST_COMMIT_MESSAGE" value="Validação dos campos na configuração do plugin" />
+    <MESSAGE value="Atualização do OpenAIClient para integrar a versão do chat da Api do OpenAI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Atualização do OpenAIClient para integrar a versão do chat da Api do OpenAI" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -464,18 +501,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/OpenAIClient.java</url>
-          <line>34</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/OpenAIClient.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/yth/ai/codereview/client/OpenAIClient.java</url>
-          <line>71</line>
-          <option name="timeStamp" value="8" />
+          <line>37</line>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

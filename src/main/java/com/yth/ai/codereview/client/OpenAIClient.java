@@ -10,6 +10,9 @@ import feign.Feign;
 import feign.gson.GsonDecoder;
 import feign.gson.GsonEncoder;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class OpenAIClient {
 
     private static OpenAIResponse responce = new OpenAIResponse();
@@ -46,16 +49,13 @@ public class OpenAIClient {
         String secretKey = propertiesComponent.getValue(PluginPropertiesEnum.SECRET_KEY_PROPERTY.getPropertyName());
         String model = propertiesComponent.getValue(PluginPropertiesEnum.MODEL_PROPERTY.getPropertyName());
         String temperature = propertiesComponent.getValue(PluginPropertiesEnum.TEMPERATURE_PROPERTY.getPropertyName());
-        String maxTokens = propertiesComponent.getValue(PluginPropertiesEnum.TOKENS_PROPERTY.getPropertyName());
 
+        List<OpenAIRequest.Message> messages = new ArrayList<>();
+        messages.add(new OpenAIRequest.Message("user", "Ping"));
         OpenAIRequest request = new OpenAIRequest(
                 model.toLowerCase(),
-                "Ping",
-                Double.parseDouble(temperature),
-                Integer.parseInt(maxTokens),
-                1,
-                0,
-                0
+                messages,
+                Double.parseDouble(temperature)
         );
 
         ProgressManager.getInstance().runProcessWithProgressSynchronously(() -> {

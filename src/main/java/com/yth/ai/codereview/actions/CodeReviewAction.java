@@ -20,6 +20,8 @@ import com.yth.ai.codereview.configuration.Message;
 import com.yth.ai.codereview.configuration.PluginPropertiesEnum;
 
 import java.awt.datatransfer.StringSelection;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class CodeReviewAction extends AnAction {
@@ -61,34 +63,29 @@ public class CodeReviewAction extends AnAction {
             return;
         }
 
-        String prompt = String.format("%s %s",
-                Message.getMessage("reviewCodeMessage"),
-                selectedText
-        );
-
+        List<OpenAIRequest.Message> messages = new ArrayList<>();
+        messages.add(new OpenAIRequest.Message("system", Message.getMessage("reviewCodeMessage")));
+        messages.add(new OpenAIRequest.Message("user", selectedText));
+//        messages.add(new OpenAIRequest.Message("assistant", Message.getMessage("role.assistant.codereviewresponse")));
         OpenAIRequest request = new OpenAIRequest(
                 model.toLowerCase(),
-                prompt,
-                Double.parseDouble(temperature),
-                Integer.parseInt(maxTokens),
-                1,
-                0,
-                0
+                messages,
+                Double.parseDouble(temperature)
         );
 
         OpenAIClient cliente = new OpenAIClient();
-        OpenAIResponse responce = cliente.request(request);
-        if (responce.choices != null) {
-            String sugestion = this.mountAiSugestions(responce);
-            CopyPasteManager.getInstance().setContents(new StringSelection(sugestion));
+        OpenAIResponse response = cliente.request(request);
+        if (response.choices != null) {
+            String suggestion = this.mountAiSuggestions(response);
+            CopyPasteManager.getInstance().setContents(new StringSelection(suggestion));
             displayClipBoardAISugestion();
         }
     }
 
-    public String mountAiSugestions(OpenAIResponse response) {
+    public String mountAiSuggestions(OpenAIResponse response) {
         StringBuilder sb = new StringBuilder();
         for (OpenAIResponse.Choice choice : response.getChoices()) {
-            sb.append(choice.text);
+            sb.append(choice.message.content);
         }
         return sb.toString();
     }
