@@ -35,6 +35,8 @@ public class CodeReviewSettings implements Configurable {
 
     private Editor editor;
     private static final String ENGINE = "com.yth.ai.codereview.engine";
+    private static final String CHATGPT = "ChatGPT";
+    private static final String GEMINI = "Gemini";
     private static final String SECRET_KEY_PROPERTY = "com.yth.ai.codereview.secretKey";
     private static final String MODEL_PROPERTY = "com.yth.ai.codereview.model";
     private static final String LANGUAGE_PROPERTY = "com.yth.ai.codereview.language";
@@ -56,6 +58,7 @@ public class CodeReviewSettings implements Configurable {
     private JLabel lblTemperature;
     private JTextField txtGeminiModel;
 
+    PropertiesComponent propertiesComponent;
     private String engineSelected;
 
     public CodeReviewSettings() {
@@ -71,6 +74,7 @@ public class CodeReviewSettings implements Configurable {
                     lblGetOpenAISecretKey.setVisible(true);
                     txtGeminiModel.setVisible(false);
                     toggleFields(true);
+                    propertiesComponent.setValue(ENGINE, CHATGPT);
                 }
             }
         });
@@ -84,6 +88,7 @@ public class CodeReviewSettings implements Configurable {
                     lblGetGeminiKey.setVisible(true);
                     txtGeminiModel.setVisible(true);
                     toggleFields(false);
+                    propertiesComponent.setValue(ENGINE, GEMINI);
                 }
             }
         });
@@ -104,12 +109,18 @@ public class CodeReviewSettings implements Configurable {
     @Nls(capitalization = Nls.Capitalization.Title)
     @Override
     public String getDisplayName() {
-        return "My Plugin Settings";
+        return "AI Code Review";
     }
 
     @Nullable
     @Override
     public JComponent createComponent() {
+        propertiesComponent = PropertiesComponent.getInstance();
+        engineSelected = propertiesComponent.getValue(ENGINE);
+
+        chatpGptEngine.setSelected(CHATGPT.equals(engineSelected));
+        geminiEngine.setSelected(GEMINI.equals(engineSelected));
+
         lblGetOpenAISecretKey.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -195,13 +206,7 @@ public class CodeReviewSettings implements Configurable {
         ValidateSettings.validateTemperatureInput(tokens);
         ValidateSettings.validateTemperatureField(temperature);
 
-        engineSelected = chatpGptEngine.getText();
-        if (geminiEngine.isSelected())
-            engineSelected = geminiEngine.getText();
-
-        if (chatpGptEngine.isSelected())
-            engineSelected = chatpGptEngine.getText();
-
+        engineSelected = chatpGptEngine.isSelected() ? CHATGPT: GEMINI;
         propertiesComponent.setValue(ENGINE, engineSelected);
         propertiesComponent.setValue(SECRET_KEY_PROPERTY, secretKey);
         propertiesComponent.setValue(MODEL_PROPERTY, (String) modelField.getSelectedItem());
