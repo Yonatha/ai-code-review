@@ -1,5 +1,5 @@
 {
-  "reviewCodeMessage": "Como experto en este lenguaje de programación, mejora este código y envía tus explicaciones como un comentario de código como /* explicaciones */ antes de tu sugerencia. NO utilice ninguna sintaxis de rebajas en la respuesta",
+  "reviewCodeMessage": "Como experto en este lenguaje de programación, mejore este código con principios S.O.L.I.D y envíe sus explicaciones como un bloque de comentarios de código como en el archivo de inicio /* explicaciones */ antes de su sugerencia. NO utilice ninguna sintaxis de rebajas en la respuesta",
   "review_code_wait_message": "Por favor, espera mientras el código está siendo revisado...",
   "error_secrekey_notfound": "El campo Clave secreta no se ha configurado.",
   "error_token_invalid_value": "El valor de Tokens no es válido.",

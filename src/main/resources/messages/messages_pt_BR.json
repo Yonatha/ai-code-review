@@ -1,5 +1,5 @@
 {
-  "reviewCodeMessage": "Como especialista nesta linguagem de programação, melhore este código e envie suas explicações como um comentário de código como /* explicações */ antes de sua sugestão. NÃO use nenhuma sintaxe de markdown na resposta",
+  "reviewCodeMessage": "Como especialista nesta linguagem de programação, melhore este código com princípios S.O.L.I.D e envie suas explicações como um bloco de comentários de código como no arquivo inicial /* explicações */ antes de sua sugestão. NÃO use nenhuma sintaxe de markdown na resposta",
   "review_code_wait_message": "Aguarde enquanto o código esta sendo revisado....",
   "error_secrekey_notfound": "O campo Chave Secreta não foi configurado.",
   "error_token_invalid_value": "O valor do Token não é válido.",

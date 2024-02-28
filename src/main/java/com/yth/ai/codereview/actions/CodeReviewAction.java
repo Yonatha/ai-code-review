@@ -51,7 +51,12 @@ public class CodeReviewAction extends AnAction {
         if (!isComplianceSecret())
             return;
 
-        getSuggestion(selectedText);
+        String suggestion = getSuggestion(selectedText);
+
+        if (suggestion != null) {
+            CopyPasteManager.getInstance().setContents(new StringSelection(suggestion));
+            displayClipBoardAISugestion();
+        }
     }
 
     public boolean isComplianceSecret(){
@@ -76,20 +81,14 @@ public class CodeReviewAction extends AnAction {
         return true;
     }
 
-    public void getSuggestion(String selectedText){
-        String suggestion = null;
+    public String getSuggestion(String selectedText) {
         if (engine.equals("ChatGPT")) {
             ChatGPTService chatGPTService = new ChatGPTService();
-            suggestion = chatGPTService.openAiMountRequest(model, temperature, selectedText);
-        } else if (engine.equals("Gemini")) {
-            GeminiService geminiService = new GeminiService();
-            suggestion = geminiService.geminiMoutRequest(selectedText);
+            return chatGPTService.openAiMountRequest(model, temperature, selectedText);
         }
 
-        if (suggestion != null) {
-            CopyPasteManager.getInstance().setContents(new StringSelection(suggestion));
-            displayClipBoardAISugestion();
-        }
+        GeminiService geminiService = new GeminiService();
+        return geminiService.geminiMoutRequest(selectedText);
     }
 
     private void displayClipBoardAISugestion() {
