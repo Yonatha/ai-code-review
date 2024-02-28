@@ -43,7 +43,8 @@ public class CodeReviewSettings implements Configurable {
     private static final String TOKENS_PROPERTY = "com.yth.ai.codereview.tokens";
     private static final String TEMPERATURE_PROPERTY = "com.yth.ai.codereview.temperature";
     private JPanel panel;
-    private JTextField secretKeyField;
+    private JPasswordField secretKeyField;
+    private JCheckBox secretKeyCheckBox;
     private JComboBox languageCombo;
     private JTextField tokens;
     private JTextField temperature;
@@ -89,6 +90,19 @@ public class CodeReviewSettings implements Configurable {
                     txtGeminiModel.setVisible(true);
                     toggleFields(false);
                     propertiesComponent.setValue(ENGINE, GEMINI);
+                }
+            }
+        });
+
+        secretKeyCheckBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (secretKeyCheckBox.isSelected()) {
+                    secretKeyField.setEchoChar((char) 0);
+                    secretKeyCheckBox.setText("Hide");
+                } else {
+                    secretKeyField.setEchoChar('*');
+                    secretKeyCheckBox.setText("Show");
                 }
             }
         });
@@ -165,7 +179,7 @@ public class CodeReviewSettings implements Configurable {
                         boolean isConnected = false;
                         if (chatpGptEngine.isSelected()) {
                             isConnected = OpenAIClient.testConnection();
-                        } else if(geminiEngine.isSelected()) {
+                        } else if (geminiEngine.isSelected()) {
                             isConnected = GeminiAIClient.testConnection();
                         }
 
@@ -206,7 +220,7 @@ public class CodeReviewSettings implements Configurable {
         ValidateSettings.validateTemperatureInput(tokens);
         ValidateSettings.validateTemperatureField(temperature);
 
-        engineSelected = chatpGptEngine.isSelected() ? CHATGPT: GEMINI;
+        engineSelected = chatpGptEngine.isSelected() ? CHATGPT : GEMINI;
         propertiesComponent.setValue(ENGINE, engineSelected);
         propertiesComponent.setValue(SECRET_KEY_PROPERTY, secretKey);
         propertiesComponent.setValue(MODEL_PROPERTY, (String) modelField.getSelectedItem());
