@@ -12,6 +12,7 @@ import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.editor.SelectionModel;
 import com.intellij.openapi.ide.CopyPasteManager;
 import com.intellij.openapi.options.ShowSettingsUtil;
+import com.intellij.psi.PsiFile;
 import com.yth.ai.codereview.client.GoogleAI.GeminiService;
 import com.yth.ai.codereview.client.OpenAI.ChatGPTService;
 import com.yth.ai.codereview.configuration.CodeReviewSettings;
@@ -51,12 +52,20 @@ public class CodeReviewAction extends AnAction {
         if (!isComplianceSecret())
             return;
 
-        String suggestion = getSuggestion(selectedText);
+        String currentExtensionFile = detectExtension(e);
+        selectedText = currentExtensionFile + ": " + selectedText;
 
+        String suggestion = getSuggestion(selectedText);
         if (suggestion != null) {
             CopyPasteManager.getInstance().setContents(new StringSelection(suggestion));
             displayClipBoardAISugestion();
         }
+    }
+
+    public String detectExtension(AnActionEvent e) {
+        PsiFile psiFile = CommonDataKeys.PSI_FILE.getData(e.getDataContext());
+        String fileName = psiFile.getName();
+        return fileName.substring(fileName.lastIndexOf(".") + 1);
     }
 
     public boolean isComplianceSecret(){
